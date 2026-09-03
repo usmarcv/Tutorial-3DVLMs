@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial: An overview of 3D Vision-Language Models</title>
+    <meta name="description" content="Project page for Tutorial: An overview of 3D Vision-Language Models">
+
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+
+    <!-- Hero Section -->
+    <section id="overview" class="hero-section">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="gradient-text">Tutorial</span>: An overview of 3D Vision-Language Models
+            </h1>
+            <p class="hero-status">SIBGRAPI 2026</p>
+
+            <div class="hero-authors">
+                <span><a href=https://www.linkedin.com/in/marcusvlc/" target="_blank" rel="noopener noreferrer">Márcus Lobo</a><sup>*</sup><sup>†</sup><sup>1</sup></span>
+                <span><a href="https://vitorpmh.github.io/" target="_blank" rel="noopener noreferrer">Vitor Matias</a><sup>*</sup><sup>1</sup></span>
+                <span><a href="https://sites.google.com/icmc.usp.br/apneto/home" target="_blank" rel="noopener noreferrer">Afonso Paiva</a><sup>1</sup></span>
+                <span><a href="https://jeovafarias.github.io/" target="_blank" rel="noopener noreferrer">Jeová Farias</a><sup>2</sup></span>
+                <span><a href="https://sites.google.com/site/tiagonovellodebrito/" target="_blank" rel="noopener noreferrer">Tiago Novello</a><sup>3</sup></span>
+                <span><a href="https://sites.google.com/site/moacirponti/" target="_blank" rel="noopener noreferrer">Moacir Ponti</a><sup>1</sup></span>
+            </div>
+
+            <!-- Affiliations -->
+            <div class="hero-affiliations">
+                <span>ICMC-USP<sup>1</sup></span>
+                <span>Bowdoin College<sup>2</sup></span>
+                <span>IMPA<sup>3</sup></span>
+            </div>  
+            
+
+            <div class="hero-notes">
+                <span>*: Equal contribution</span>
+                <span>†: Corresponding Author</span>
+            </div>
+
+            <!-- Link Buttons -->
+            <div class="hero-buttons">
+                <a href="#" class="btn" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-file-pdf"></i> Paper
+                </a>
+                <a href="https://github.com/usmarcv/Tutorial-3DVLMs" class="btn btn-outline" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i> Code
+                </a>
+                <a href="#citation" class="btn btn-outline">
+                    <i class="fa-solid fa-quote-right"></i> Citation
+                </a>
+            </div>
+        </div>
+
+        <!-- Teaser Figure -->
+        <div class="analysis-image-container" style="margin-bottom: 2rem; max-width: 72rem; margin-left: auto; margin-right: auto;">
+            <img src="assets/images/3dvlm-overview.jpg" alt="Teaser Figure" class="analysis-image zoomable-image">
+        </div>
+
+        <!-- TL;DR / Teaser -->
+        <div class="teaser-container">
+
+            <div class="tldr-box">
+                <div class="tldr-content">
+                    <span class="tldr-label">TL;DR</span>
+                    <p class="tldr-text">
+                        <!-- We propose <span class="tldr-highlight">AgentRVOS</span>, a training-free, <span class="tldr-highlight">agentic RVOS pipeline</span> that first obtains full-video object tracks with <b>SAM3</b> and then lets an <b>MLLM</b> identify the referred target through query-grounded reasoning over object-level evidence, achieving <span class="tldr-highlight">state-of-the-art performance</span> across multiple benchmarks. -->
+                    This tutorial...
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Abstract -->
+    <section id="abstract" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Abstract</h2>
+            <div class="abstract-text">
+                <p>
+                Vision-Language Models (VLMs) are reshaping computer vision by aligning visual and textual embeddings, 
+                allowing models to recognize visual concepts and reason about them using natural language.
+                Traditional 3D deep-learning models, however, are typically trained for specific tasks, such as classification, 
+                segmentation, or detection, and do not naturally support cross-modal retrieval from their embedding spaces using text or images as queries.
+                To address this issue, Contrastive Language-Image Pretraining (CLIP)-based methods align 3D embeddings with pretrained image and text 
+                representations, giving rise to 3D Vision-Language Models (3D VLMs) that support zero-shot classification and cross-modal retrieval, 
+                and open-vocabulary recognition of 3D shapes.
+                This tutorial provides an overview of 3D VLMs, ranging from basic definitions of 3D representations and their encoding into embeddings to cross-modal contrastive alignment, 
+                modern multimodal frameworks, and 3D Vision-Large Language Models (3D VLLMs). 
+                We present the main definitions of contrastive learning for multimodal embedding alignment and highlight recent advances in language-guided 3D Gaussian splatting, 3D shape generation, and embodied AI for robotics.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section: Point Tracking (main contribution) -->
+    <!-- <section id="method" class="section">
+
+        <div class="container">
+            <h2 class="section-title">AgentRVOS</h2> -->
+
+            <!-- Architecture overview figure -->
+            <!-- <div class="analysis-image-container">
+                <img src="assets/overall_pipeline.png" alt="Method Overview" class="analysis-image zoomable-image">
+            </div>
+            <div style="margin-top: 2rem; margin-bottom: 4rem; padding: 1.25rem 1.5rem; background: var(--color-bg-alt); border-left: 3px solid var(--color-primary); border-radius: 0 8px 8px 0;">
+                <p style="margin: 0 0 0.75rem 0; line-height: 1.6;">
+                    Given a video and a natural language query, our pipeline operates in two phases:
+                </p>
+                <ul style="margin: 0; padding-left: 1.25rem; list-style-type: disc;">
+                    <li style="margin-bottom: 0.5rem; font-size: 1.05rem; line-height: 1.6;">
+                        <span class="phase-highlight"><b>Candidate Mask Track Generation</b></span> — the MLLM extracts concepts from the query, which SAM3 uses to produce temporally consistent candidate mask tracks through an iterative process.
+                    </li>
+                    <li style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">
+                        <span class="phase-highlight"><b>Iterative Spatio-temporal Pruning</b></span> — the MLLM reasons over candidates, classifying each as Accepted, Rejected, or Uncertain, while progressively narrowing the spatio-temporal scope until convergence.
+                    </li>
+                </ul>
+            </div> -->
+
+            <!-- Sub-sections -->
+            <!-- <div class="analysis-content">
+                <div id="sub-tracking" data-subsection>
+                    <h3 class="analysis-subtitle">1. Candidate Mask Track Generation</h3>
+                    <div class="analysis-image-container">
+                        <img src="assets/candidate_mask_track_generation.png" alt="Method Overview" class="analysis-image zoomable-image">
+                    </div>
+                    <p style="margin-bottom: 3rem;">
+                        For <b>referring queries (a)</b>, SAM3 generates tracks using the extracted concept. For <b>reasoning queries (b)</b>, the video is provided alongside the expression. SAM3 processes all frames, enabling detection even when the target appears sparsely (e.g., "hand" in two frames).
+                    </p>
+                </div>
+
+                <div id="sub-appearance" data-subsection>
+                    <h3 class="analysis-subtitle">2. Appearance Tool (Optional)</h3>
+                    <div class="analysis-image-container">
+                        <img src="assets/appearance_tool.png" alt="Method Overview" class="analysis-image zoomable-image">
+                    </div>
+                    <p style="margin-bottom: 3rem;">
+                        Between candidate mask track generation and iterative spatio-temporal pruning, <b>the appearance tool can be optionally invoked</b>. When appearance-level evidence is needed, the agent generates brief descriptions for each candidate object to supplement information obscured by visual prompting.
+                    </p>
+                </div>
+
+                <div id="sub-component" data-subsection>
+                    <h3 class="analysis-subtitle">3. Iterative Spatio-temporal Pruning</h3>
+                    Additional component figures
+                    <div class="analysis-image-container">
+                        <img src="assets/iterative_pruning.png" alt="Method Overview" class="analysis-image zoomable-image">
+                    </div>
+                    <p style="margin-bottom: 3rem;">
+                        The MLLM classifies each candidate as <span class="label-accepted">Accept</span>, <span class="label-rejected">Reject</span>, or <span class="label-uncertain">Uncertain</span>, iteratively narrowing the spatio-temporal scope by focusing on frames with uncertain candidates while excluding rejected ones. Starting with candidates <span class="phase-highlight">[0, 2, 3, 5, 6]</span>, the agent prunes <span class="label-rejected">[0, 6]</span> and examines <span class="phase-highlight">[2, 3, 5]</span> until convergence.
+                    </p>
+                </div>
+
+            </div> -->
+        <!-- </div>
+    </section> -->
+
+    <!-- Experiments: Tracking Results (main) -->
+    <!-- <section id="experiments" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Experiments</h2> -->
+
+            <!-- Quantitative: RVOS benchmarks -->
+            <!-- <div id="sub-benchmarks" data-subsection class="results-block">
+                <h3 class="analysis-subtitle">Quantitative Results</h3>
+                <p>
+                    We evaluate AgentRVOS on multiple RVOS benchmarks: <b>MeViS</b>, <b>ReVOS</b>, and <b>ReasonVOS</b>.
+                    <br> -->
+                    <!-- <b>AgentRVOS</b> achieves state-of-the-art results across all settings. -->
+                    <!-- <b>AgentRVOS</b> achieves state-of-the-art performance across all benchmarks with different MLLM backbones. -->
+                <!-- </p>
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Method</th>
+                                <th rowspan="2">MLLM</th>
+                                <th colspan="3">MeViS</th>
+                                <th colspan="3">ReVOS</th>
+                                <th colspan="3">ReasonVOS</th>
+                            </tr>
+                            <tr>
+                                <th>J</th>
+                                <th>F</th>
+                                <th>J&F</th>
+                                <th>J</th>
+                                <th>F</th>
+                                <th>J&F</th>
+                                <th>J</th>
+                                <th>F</th>
+                                <th>J&F</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="separator-row"><td colspan="11"></td></tr>
+                            <tr><td colspan="11" style="text-align: left; font-weight: 600; background-color: var(--color-bg-alt);">Training-based Methods</td></tr>
+                            <tr>
+                                <td>VideoLISA</td>
+                                <td>LLaVA-3.8B</td>
+                                <td>41.3</td><td>47.6</td><td>44.4</td>
+                                <td>-</td><td>-</td><td>-</td>
+                                <td>45.1</td><td>49.9</td><td>47.5</td>
+                            </tr>
+                            <tr>
+                                <td>VISA</td>
+                                <td>Chat-UniVi-13B</td>
+                                <td>41.8</td><td>47.1</td><td>44.5</td>
+                                <td>48.8</td><td>52.9</td><td>50.9</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>HyperSeg</td>
+                                <td>Mipha-3B</td>
+                                <td>-</td><td>-</td><td>-</td>
+                                <td>53.1</td><td>58.4</td><td>55.7</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>InstructSeg</td>
+                                <td>Mipha-3B</td>
+                                <td>-</td><td>-</td><td>-</td>
+                                <td>52.0</td><td>56.9</td><td>54.5</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>GLUS</td>
+                                <td>LISA-7B</td>
+                                <td>48.5</td><td>54.2</td><td>51.3</td>
+                                <td>52.4</td><td>57.3</td><td>54.9</td>
+                                <td>47.5</td><td>52.4</td><td>49.9</td>
+                            </tr>
+                            <tr>
+                                <td>ViLLa</td>
+                                <td>InternVideo2-6B</td>
+                                <td>46.5</td><td>52.3</td><td>49.4</td>
+                                <td>54.9</td><td>59.1</td><td>57.0</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Sa2VA</td>
+                                <td>InternVL2-8B</td>
+                                <td>-</td><td>-</td><td>46.9</td>
+                                <td>-</td><td>-</td><td>57.6</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Sa2VA</td>
+                                <td>InternVL3-14B</td>
+                                <td>-</td><td>-</td><td>-</td>
+                                <td>-</td><td>-</td><td>60.7</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>RGA3</td>
+                                <td>Qwen2.5-VL-7B</td>
+                                <td>47.4</td><td>52.8</td><td>50.1</td>
+                                <td>55.9</td><td>60.0</td><td>58.0</td>
+                                <td>51.3</td><td>56.0</td><td>53.6</td>
+                            </tr>
+                            <tr>
+                                <td>VRS-HQ</td>
+                                <td>Chat-UniVi-13B</td>
+                                <td>48.0</td><td>53.7</td><td>50.9</td>
+                                <td>57.6</td><td>62.5</td><td>60.0</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>VideoSeg-R1</td>
+                                <td>Qwen2.5-VL-7B</td>
+                                <td>52.7</td><td>57.8</td><td>55.3</td>
+                                <td>58.2</td><td>64.0</td><td>61.1</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr class="separator-row"><td colspan="11"></td></tr>
+                            <tr><td colspan="11" style="text-align: left; font-weight: 600; background-color: var(--color-bg-alt);">Training-free Methods</td></tr>
+                            <tr>
+                                <td>AL-Ref-SAM2</td>
+                                <td>GPT-4</td>
+                                <td>39.5</td><td>46.2</td><td>42.8</td>
+                                <td>-</td><td>-</td><td>-</td>
+                                <td>-</td><td>-</td><td>-</td>
+                            </tr>
+                            <tr>
+                                <td>CoT-RVS</td>
+                                <td>Gemma3-12B</td>
+                                <td>40.3</td><td>48.1</td><td>44.2</td>
+                                <td>43.4</td><td>50.9</td><td>47.1</td>
+                                <td>47.5</td><td>54.0</td><td>50.7</td>
+                            </tr>
+                            <tr>
+                                <td>CoT-RVS †</td>
+                                <td>Qwen3-VL-8B-T</td>
+                                <td>37.7</td><td>43.9</td><td>40.8</td>
+                                <td>51.4</td><td>57.3</td><td>54.3</td>
+                                <td>52.5</td><td>58.9</td><td>55.7</td>
+                            </tr>
+                            <tr>
+                                <td>CoT-RVS</td>
+                                <td>GPT-4o</td>
+                                <td>48.7</td><td>55.7</td><td>52.2</td>
+                                <td>52.8</td><td>59.0</td><td>55.9</td>
+                                <td>62.4</td><td>68.7</td><td>65.5</td>
+                            </tr>
+                            <tr class="separator-row"><td colspan="11"></td></tr>
+                            <tr class="highlight-row">
+                                <td><strong>AgentRVOS (Ours)</strong></td>
+                                <td>Qwen3-VL-8B-T</td>
+                                <td>59.2</td><td>64.5</td><td>61.9</td>
+                                <td>57.7</td><td>61.9</td><td>59.8</td>
+                                <td>65.5</td><td>71.8</td><td>68.6</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong></strong></td>
+                                <td>Qwen3-VL-32B-T</td>
+                                <td><u>65.3</u></td><td><u>70.0</u></td><td><u>67.7</u></td>
+                                <td><u>60.4</u></td><td><u>64.7</u></td><td><u>62.5</u></td>
+                                <td><u>67.3</u></td><td><u>73.4</u></td><td><u>70.4</u></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong></strong></td>
+                                <td>GPT-5</td>
+                                <td><strong>70.4</strong></td><td><strong>75.7</strong></td><td><strong>73.1</strong></td>
+                                <td><strong>64.1</strong></td><td><strong>68.4</strong></td><td><strong>66.3</strong></td>
+                                <td><strong>73.1</strong></td><td><strong>78.0</strong></td><td><strong>75.5</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="results-caption">
+                    <p>
+                        Best results are in <strong>bold</strong>, second-best are <u>underlined</u>.
+                        <br>
+                        † denotes reproduced results.
+                    </p>
+                </div>
+            </div> -->
+
+            <!-- Qualitative: Tracking visualization -->
+            <!-- <div id="Qualitative_Results" data-subsection class="results-block">
+                <h3 class="analysis-subtitle">Qualitative Results</h3>
+                <p>
+                    We visualize the predicted mask tracks on MeViS, ReVOS, and ReasonVOS.
+                </p>
+                <div class="qual-demo" id="qual-demo">
+                    <p class="qual-demo-expression" id="qual-demo-expression" aria-live="polite"></p>
+                    <div class="qual-demo-pair">
+                        <div class="qual-demo-col">
+                            <span class="qual-demo-label">Original</span>
+                            <div class="qual-demo-video-wrap">
+                                <video id="qual-video-original" class="qual-demo-video" playsinline controls preload="metadata" muted autoplay loop></video>
+                            </div>
+                        </div>
+                        <div class="qual-demo-col">
+                            <span class="qual-demo-label">Prediction</span>
+                            <div class="qual-demo-video-wrap">
+                                <video id="qual-video-mask" class="qual-demo-video" playsinline controls preload="metadata" muted autoplay loop></video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qual-demo-tabs" role="tablist" aria-label="Qualitative samples" id="qual-demo-tabs"> -->
+                        <!-- Tabs will be dynamically generated from QUAL_SAMPLES -->
+                    <!-- </div>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section id="citation" class="citation-section">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 1.5rem; border: none; margin-bottom: 1rem;">BibTeX</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">
+                If you find our work useful, please consider citing our paper.
+            </p>
+            <div class="citation-block group">
+                <button onclick="copyBibtex()" class="citation-copy-btn">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </button>
+                    <pre class="citation-code">
+                        <code id="bibtex-text">
+                            @misc{...,
+                            }
+                        </code>
+                    </pre>
+            </div>
+        </div>
+    </section>
+
+       <!-- Acknowledgments Section -->
+    <section id="acknowledgments" class="citation-section">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 1.5rem; border: none; margin-bottom: 1rem;">Acknowledgments</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">
+                This work was supported in part by the São Paulo Research Foundation (FAPESP), 
+                under grants #2024/09462-1 and #2026/01721-3, and by the Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) under fellowship grant #315158/2023-9. 
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="hero-authors" >
+            <p>Website design inspired by <a href="https://cvlab-kaist.github.io/DA-Flow/"> DA-Flow</a> and <a href="https://cvlab-kaist.github.io/AgentRVOS/">AgentRVOS</a>. We thank the authors for open-sourcing their project page templates.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in Animation
+        function initFadeInAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.section, .hero-section, .citation-section, .footer');
+            sections.forEach(section => {
+                section.classList.add('fade-in-section');
+                observer.observe(section);
+            });
+        }
+
+        // Scroll Spy for Sidebar (with expandable sub-items)
+        function initScrollSpy() {
+            const sections = [...document.querySelectorAll('section[id]')];
+            const sidebarLinks = document.querySelectorAll('.sidebar-item');
+            const sidebarGroups = document.querySelectorAll('.sidebar-group');
+            const sidebar = document.querySelector('.sidebar');
+
+            function update() {
+                const mid = window.innerHeight * 0.5;
+
+                // Find active top-level section (last one whose top <= mid)
+                let activeSection = sections[0];
+                for (const s of sections) {
+                    if (s.getBoundingClientRect().top <= mid) activeSection = s;
+                }
+
+                // Find active sub-section within active section
+                const subs = [...activeSection.querySelectorAll('[data-subsection]')];
+                let activeSub = null;
+                for (const sub of subs) {
+                    if (sub.getBoundingClientRect().top <= mid) activeSub = sub;
+                }
+
+                // Reset all
+                sidebarLinks.forEach(link => link.classList.remove('active'));
+                sidebarGroups.forEach(group => group.classList.remove('expanded'));
+
+                // Highlight parent section link
+                const sectionLink = document.querySelector(`.sidebar-item[href="#${activeSection.id}"]`);
+                if (sectionLink) {
+                    sectionLink.classList.add('active');
+                    const group = sectionLink.closest('.sidebar-group');
+                    if (group) group.classList.add('expanded');
+                }
+
+                // Highlight sub-item (overrides parent highlight if found)
+                if (activeSub) {
+                    sectionLink && sectionLink.classList.remove('active');
+                    const subLink = document.querySelector(`.sidebar-sub-item[href="#${activeSub.id}"]`);
+                    if (subLink) {
+                        subLink.classList.add('active');
+                        const group = subLink.closest('.sidebar-group');
+                        if (group) group.classList.add('expanded');
+                    }
+                }
+
+                // Update gradient indicator position
+                const activeLink = document.querySelector('.sidebar-item.active');
+                if (activeLink) {
+                    const linkRect = activeLink.getBoundingClientRect();
+                    const sidebarRect = sidebar.getBoundingClientRect();
+                    sidebar.style.setProperty('--active-position', `${linkRect.top - sidebarRect.top - 32}px`);
+                }
+            }
+
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        }
+
+        function copyBibtex() {
+            const text = document.getElementById('bibtex-text').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.citation-copy-btn');
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initScrollSpy();
+            initFadeInAnimations();
+            initQualitativeDemo();
+        });
+
+        /** Qualitative side-by-side videos: edit paths and expressions here. */
+        const QUAL_SAMPLES = [
+            { expression: 'The rabbit that started off in the middle and later moved to the left', dataset: 'MeViS', original: 'assets/qual/0ab4afe7fb46_mevis_valid_rgb.mp4', mask: 'assets/qual/0ab4afe7fb46_rabbit_2_fg.mp4' },
+            { expression: 'The elephant that drank water first.', dataset: 'MeViS', original: 'assets/qual/5d30958807a2_mevis_valid_rgb.mp4', mask: 'assets/qual/5d30958807a2_animal_elephant_14_fg.mp4' },
+            { expression: 'Which object has the largest displacement?', dataset: 'ReVOS', original: 'assets/qual/LV-VIS_test_00810_revos_rgb.mp4', mask: 'assets/qual/LV-VIS_test_00810_cat_0_fg.mp4' },
+            { expression: 'The dog that is not easily found in the dark.', dataset: 'ReVOS', original: 'assets/qual/OVIS_train_1fc5e086_revos_rgb.mp4', mask: 'assets/qual/OVIS_train_1fc5e086_dog_1_fg.mp4' },
+            { expression: 'The vehicle that overtakes from the left and heads in a different direction at the intersection.', dataset: 'ReasonVOS', original: 'assets/qual/b3c939e3-3fb7622a_reasonvos_rgb.mp4', mask: 'assets/qual/b3c939e3-3fb7622a_vehicle_4_fg.mp4' },
+            { expression: 'The object that was temporarily in the girl\'s left hand grasp.', dataset: 'ReasonVOS', original: 'assets/qual/50E06_reasonvos_rgb.mp4', mask: 'assets/qual/50E06_glass_0_fg.mp4' },
+        ];
+
+        function initQualitativeDemo() {
+            const root = document.getElementById('qual-demo');
+            const exprEl = document.getElementById('qual-demo-expression');
+            const vOrig = document.getElementById('qual-video-original');
+            const vMask = document.getElementById('qual-video-mask');
+            const tabsContainer = document.getElementById('qual-demo-tabs');
+            if (!root || !exprEl || !vOrig || !vMask || !tabsContainer) return;
+
+            // Generate tabs dynamically from QUAL_SAMPLES
+            QUAL_SAMPLES.forEach((sample, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'qual-demo-tab';
+                btn.setAttribute('role', 'tab');
+                btn.setAttribute('data-qual-index', index);
+                btn.setAttribute('aria-selected', 'false');
+                btn.innerHTML = `<span class="qual-tab-dataset">${sample.dataset}</span><span class="qual-tab-text">${sample.expression}</span>`;
+                tabsContainer.appendChild(btn);
+            });
+
+            const tabs = tabsContainer.querySelectorAll('.qual-demo-tab');
+            let active = 0;
+
+            function mirrorPlayPause(from, to) {
+                if (from.paused) {
+                    if (!to.paused) to.pause();
+                } else if (to.paused) {
+                    to.play().catch(() => {});
+                }
+            }
+
+            function wirePair() {
+                let seekLock = false;
+                const alignSeek = (src, dst) => {
+                    if (seekLock) return;
+                    if (Math.abs(dst.currentTime - src.currentTime) < 0.04) return;
+                    seekLock = true;
+                    dst.currentTime = src.currentTime;
+                    requestAnimationFrame(() => { seekLock = false; });
+                };
+                vOrig.addEventListener('play', () => mirrorPlayPause(vOrig, vMask));
+                vOrig.addEventListener('pause', () => mirrorPlayPause(vOrig, vMask));
+                vMask.addEventListener('play', () => mirrorPlayPause(vMask, vOrig));
+                vMask.addEventListener('pause', () => mirrorPlayPause(vMask, vOrig));
+                vOrig.addEventListener('seeked', () => alignSeek(vOrig, vMask));
+                vMask.addEventListener('seeked', () => alignSeek(vMask, vOrig));
+                vOrig.addEventListener('timeupdate', () => {
+                    if (vOrig.paused) return;
+                    if (Math.abs(vMask.currentTime - vOrig.currentTime) > 0.25) vMask.currentTime = vOrig.currentTime;
+                });
+            }
+            wirePair();
+
+            function setSample(i) {
+                active = i;
+                const s = QUAL_SAMPLES[i];
+                exprEl.innerHTML = `<span class="expression-quote">"${s.expression}"</span>`;
+                tabs.forEach((btn, j) => {
+                    const on = j === i;
+                    btn.classList.toggle('is-active', on);
+                    btn.setAttribute('aria-selected', on ? 'true' : 'false');
+                });
+                vOrig.pause();
+                vMask.pause();
+                vOrig.src = s.original;
+                vMask.src = s.mask;
+                let canplayCount = 0;
+                const tryAutoplay = () => {
+                    if (++canplayCount < 2) return;
+                    Promise.all([vOrig.play(), vMask.play()]).catch(() => {});
+                };
+                vOrig.addEventListener('canplay', tryAutoplay, { once: true });
+                vMask.addEventListener('canplay', tryAutoplay, { once: true });
+                vOrig.load();
+                vMask.load();
+            }
+
+            tabs.forEach((btn) => {
+                btn.addEventListener('click', () => setSample(Number(btn.dataset.qualIndex)));
+            });
+
+            setSample(0);
+        }
+
+        // Image zoom functionality
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".zoomable-image");
+            const zoomOverlay = document.createElement("div");
+            zoomOverlay.classList.add("zoom-overlay");
+
+            const zoomImage = document.createElement("img");
+            zoomOverlay.appendChild(zoomImage);
+            document.body.appendChild(zoomOverlay);
+
+            images.forEach((img) => {
+                // Preload high-res image if available
+                const highResSrc = img.getAttribute("data-highres");
+                if (highResSrc) {
+                    const preloadImg = new Image();
+                    preloadImg.src = highResSrc;
+                }
+
+                img.addEventListener("click", () => {
+                    zoomImage.src = highResSrc || img.src;
+                    zoomOverlay.classList.add("active");
+                });
+            });
+
+            // Close the zoom overlay when clicking anywhere on it
+            zoomOverlay.addEventListener("click", () => {
+                zoomOverlay.classList.remove("active");
+                zoomImage.src = "";
+            });
+
+            // Allow closing with the ESC key
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") zoomOverlay.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+
+</html>
