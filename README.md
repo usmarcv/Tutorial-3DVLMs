@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Tutorial-3DVLMs
 =======
 <h1 align="center">
@@ -90,3 +91,8 @@ If you find this work useful, please consider citing:
 
 We thank the authors of [SAM3](https://github.com/facebookresearch/sam2), [Qwen3-VL](https://github.com/QwenLM/Qwen-VL) and [vLLM](https://github.com/vllm-project/vllm) for their excellent open-source contributions.
 >>>>>>> 86271c3 (Refactor code structure for improved readability and maintainability)
+=======
+<h1>
+An overview of 3D Vision-Language Models
+</h1>
+>>>>>>> 76232d5 (docs: update readme.md)
