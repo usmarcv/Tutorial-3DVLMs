@@ -1,0 +1,772 @@
+[
+  {
+    "uid": "b522108c4c08430a71d03b466c72ce41",
+    "synset": "02691156",
+    "category": "airplane",
+    "data_path": "dataset/02691156/b522108c4c08430a71d03b466c72ce41.npy",
+    "caption": "a 3d model of an airplane flying in the sky"
+  },
+  {
+    "uid": "d3580448933d00fd90b1d6deb98feec6",
+    "synset": "02691156",
+    "category": "airplane",
+    "data_path": "dataset/02691156/d3580448933d00fd90b1d6deb98feec6.npy",
+    "caption": "a red and white airplane flying on a white background"
+  },
+  {
+    "uid": "c6ef918f335bb21c5896bab37ddebe7",
+    "synset": "02747177",
+    "category": "ashcan",
+    "data_path": "dataset/02747177/c6ef918f335bb21c5896bab37ddebe7.npy",
+    "caption": "a grey trash can with a lid on top"
+  },
+  {
+    "uid": "d3b69f01f5f02240ad5067eac75a07f7",
+    "synset": "02747177",
+    "category": "ashcan",
+    "data_path": "dataset/02747177/d3b69f01f5f02240ad5067eac75a07f7.npy",
+    "caption": "a gray trash can on a white background"
+  },
+  {
+    "uid": "72dd1dca3421f63576bb31db0358e9c6",
+    "synset": "02773838",
+    "category": "bag",
+    "data_path": "dataset/02773838/72dd1dca3421f63576bb31db0358e9c6.npy",
+    "caption": "a black briefcase on a white background"
+  },
+  {
+    "uid": "e8039f73cf912ff5e8c69fd29511206a",
+    "synset": "02773838",
+    "category": "bag",
+    "data_path": "dataset/02773838/e8039f73cf912ff5e8c69fd29511206a.npy",
+    "caption": "a white and gold clutch bag"
+  },
+  {
+    "uid": "547b9fbe28ffae9d5f9a06467b1259de",
+    "synset": "02801938",
+    "category": "basket",
+    "data_path": "dataset/02801938/547b9fbe28ffae9d5f9a06467b1259de.npy",
+    "caption": "a blue box with a wooden handle"
+  },
+  {
+    "uid": "61ce681b67ceb94f4c2db8f2b94d9c39",
+    "synset": "02801938",
+    "category": "basket",
+    "data_path": "dataset/02801938/61ce681b67ceb94f4c2db8f2b94d9c39.npy",
+    "caption": "a basket with a handle and a wire"
+  },
+  {
+    "uid": "a1531938a8f8c32b6e1f781c3bfa1222",
+    "synset": "02808440",
+    "category": "bathtub",
+    "data_path": "dataset/02808440/a1531938a8f8c32b6e1f781c3bfa1222.npy",
+    "caption": "a rectangular bathtub with a white base"
+  },
+  {
+    "uid": "dacf794f991fc0173e9b7c3ab7636200",
+    "synset": "02808440",
+    "category": "bathtub",
+    "data_path": "dataset/02808440/dacf794f991fc0173e9b7c3ab7636200.npy",
+    "caption": "a 3d model of a bathtub with water in it"
+  },
+  {
+    "uid": "5e930124cbecf7091da03d263d0d0387",
+    "synset": "02818832",
+    "category": "bed",
+    "data_path": "dataset/02818832/5e930124cbecf7091da03d263d0d0387.npy",
+    "caption": "a gray box on a white background"
+  },
+  {
+    "uid": "cecc7a6677eab8accf9f37ec17841254",
+    "synset": "02818832",
+    "category": "bed",
+    "data_path": "dataset/02818832/cecc7a6677eab8accf9f37ec17841254.npy",
+    "caption": "a bunk bed with a blue cover and a blue sheet"
+  },
+  {
+    "uid": "1f0c3038d2a9bb391b305ee09b6b9906",
+    "synset": "02828884",
+    "category": "bench",
+    "data_path": "dataset/02828884/1f0c3038d2a9bb391b305ee09b6b9906.npy",
+    "caption": "two chairs with a striped pattern"
+  },
+  {
+    "uid": "b997659a319cae6369923f7b2ea9aba",
+    "synset": "02828884",
+    "category": "bench",
+    "data_path": "dataset/02828884/b997659a319cae6369923f7b2ea9aba.npy",
+    "caption": "a gray bench with a lattice pattern"
+  },
+  {
+    "uid": "689f228f64564e663599338e3538d2bd",
+    "synset": "02843684",
+    "category": "birdhouse",
+    "data_path": "dataset/02843684/689f228f64564e663599338e3538d2bd.npy",
+    "caption": "birdhouse 3d model - png"
+  },
+  {
+    "uid": "a842ad87774e1948a89d6f0a00bf90fd",
+    "synset": "02843684",
+    "category": "birdhouse",
+    "data_path": "dataset/02843684/a842ad87774e1948a89d6f0a00bf90fd.npy",
+    "caption": "birdhouse 3d model"
+  },
+  {
+    "uid": "b8e455419b42c77e262b272ccb3b11c2",
+    "synset": "02871439",
+    "category": "bookshelf",
+    "data_path": "dataset/02871439/b8e455419b42c77e262b272ccb3b11c2.npy",
+    "caption": "a brown bookcase with shelves and drawers"
+  },
+  {
+    "uid": "f7e50a524e4c0120f5e4af71271bcb89",
+    "synset": "02871439",
+    "category": "bookshelf",
+    "data_path": "dataset/02871439/f7e50a524e4c0120f5e4af71271bcb89.npy",
+    "caption": "a red shelf with two shelves"
+  },
+  {
+    "uid": "b35973652d9a526c64848cfde3847b25",
+    "synset": "02876657",
+    "category": "bottle",
+    "data_path": "dataset/02876657/b35973652d9a526c64848cfde3847b25.npy",
+    "caption": "a bottle with a yellow lid on a white background"
+  },
+  {
+    "uid": "e9371d3abbb3bb7265bca0cae1ecfff5",
+    "synset": "02876657",
+    "category": "bottle",
+    "data_path": "dataset/02876657/e9371d3abbb3bb7265bca0cae1ecfff5.npy",
+    "caption": "a green bottle with a wooden handle"
+  },
+  {
+    "uid": "bec41cc7f631e00b1bf40e92cbe8569f",
+    "synset": "02880940",
+    "category": "bowl",
+    "data_path": "dataset/02880940/bec41cc7f631e00b1bf40e92cbe8569f.npy",
+    "caption": "a brown bowl on a white background"
+  },
+  {
+    "uid": "c399bfee7f25f0ff95aab58c1db71c10",
+    "synset": "02880940",
+    "category": "bowl",
+    "data_path": "dataset/02880940/c399bfee7f25f0ff95aab58c1db71c10.npy",
+    "caption": "a blue bowl on a white background"
+  },
+  {
+    "uid": "2142f1b622cc1b07e99562689078395",
+    "synset": "02924116",
+    "category": "bus",
+    "data_path": "dataset/02924116/2142f1b622cc1b07e99562689078395.npy",
+    "caption": "a blue bus on a white background"
+  },
+  {
+    "uid": "b247dc34286641995d04635357309588",
+    "synset": "02924116",
+    "category": "bus",
+    "data_path": "dataset/02924116/b247dc34286641995d04635357309588.npy",
+    "caption": "a 3d model of a bus on a white background"
+  },
+  {
+    "uid": "5fec62a43a64ecb6f51f77a6d7299806",
+    "synset": "02933112",
+    "category": "cabinet",
+    "data_path": "dataset/02933112/5fec62a43a64ecb6f51f77a6d7299806.npy",
+    "caption": "a 3d image of a metal cabinet with two doors"
+  },
+  {
+    "uid": "bbbd4de3e7ab25ad80d6227ff9b21190",
+    "synset": "02933112",
+    "category": "cabinet",
+    "data_path": "dataset/02933112/bbbd4de3e7ab25ad80d6227ff9b21190.npy",
+    "caption": "a gray 3d model of a toilet"
+  },
+  {
+    "uid": "89f0e0da4747aad1172ac9cfeff21994",
+    "synset": "02942699",
+    "category": "camera",
+    "data_path": "dataset/02942699/89f0e0da4747aad1172ac9cfeff21994.npy",
+    "caption": "a model of a gray object with a handle"
+  },
+  {
+    "uid": "d1a3482c576f8c50592ecd319dfd8c5d",
+    "synset": "02942699",
+    "category": "camera",
+    "data_path": "dataset/02942699/d1a3482c576f8c50592ecd319dfd8c5d.npy",
+    "caption": "a 3d model of a camera on a stand"
+  },
+  {
+    "uid": "70446b4dc6649d0173c0d206b70af93c",
+    "synset": "02946921",
+    "category": "can",
+    "data_path": "dataset/02946921/70446b4dc6649d0173c0d206b70af93c.npy",
+    "caption": "a gray trash can on a white background"
+  },
+  {
+    "uid": "b6c4d78363d965617cb2a55fa21392b7",
+    "synset": "02946921",
+    "category": "can",
+    "data_path": "dataset/02946921/b6c4d78363d965617cb2a55fa21392b7.npy",
+    "caption": "a white can with a lid on it"
+  },
+  {
+    "uid": "4bd0b6df02772d8f59c9250a427b57f",
+    "synset": "02954340",
+    "category": "cap",
+    "data_path": "dataset/02954340/4bd0b6df02772d8f59c9250a427b57f.npy",
+    "caption": "a blue and yellow ball on a white background"
+  },
+  {
+    "uid": "a444fff8c769de616a10eb60523df1e9",
+    "synset": "02954340",
+    "category": "cap",
+    "data_path": "dataset/02954340/a444fff8c769de616a10eb60523df1e9.npy",
+    "caption": "a black hat with a black logo on it"
+  },
+  {
+    "uid": "a75ff576da012340468bac13e007a6e9",
+    "synset": "02958343",
+    "category": "car",
+    "data_path": "dataset/02958343/a75ff576da012340468bac13e007a6e9.npy",
+    "caption": "audi r8 ls1 3d printed"
+  },
+  {
+    "uid": "b3aea199d8f8945d3c8089ca2f2a9299",
+    "synset": "02958343",
+    "category": "car",
+    "data_path": "dataset/02958343/b3aea199d8f8945d3c8089ca2f2a9299.npy",
+    "caption": "a red convertible car is shown in 3d"
+  },
+  {
+    "uid": "3b2c9428da926e939ae03736d955651b",
+    "synset": "03001627",
+    "category": "chair",
+    "data_path": "dataset/03001627/3b2c9428da926e939ae03736d955651b.npy",
+    "caption": "a pink chair with a wooden frame"
+  },
+  {
+    "uid": "570ee99e247c6cb0492d9da2668ec34c",
+    "synset": "03001627",
+    "category": "chair",
+    "data_path": "dataset/03001627/570ee99e247c6cb0492d9da2668ec34c.npy",
+    "caption": "a 3d image of a stacking chair"
+  },
+  {
+    "uid": "3182826d3c212720c4440dd41b08b3f4",
+    "synset": "03046257",
+    "category": "clock",
+    "data_path": "dataset/03046257/3182826d3c212720c4440dd41b08b3f4.npy",
+    "caption": "a grandfather clock with a painting on it"
+  },
+  {
+    "uid": "5147d0b10721d430f51f77a6d7299806",
+    "synset": "03046257",
+    "category": "clock",
+    "data_path": "dataset/03046257/5147d0b10721d430f51f77a6d7299806.npy",
+    "caption": "a metal starburst hanging from a white background"
+  },
+  {
+    "uid": "980ea79e2dab7a595f4027209dc8065d",
+    "synset": "03085013",
+    "category": "computer keyboard",
+    "data_path": "dataset/03085013/980ea79e2dab7a595f4027209dc8065d.npy",
+    "caption": "a black keyboard with a white background"
+  },
+  {
+    "uid": "ac37c2bffd932033c03cb21be18ac701",
+    "synset": "03085013",
+    "category": "computer keyboard",
+    "data_path": "dataset/03085013/ac37c2bffd932033c03cb21be18ac701.npy",
+    "caption": "a black computer keyboard on a white background"
+  },
+  {
+    "uid": "3f1e8fffc2e33a4b66e9ca8568fd3989",
+    "synset": "03207941",
+    "category": "dishwasher",
+    "data_path": "dataset/03207941/3f1e8fffc2e33a4b66e9ca8568fd3989.npy",
+    "caption": "a stainless steel dishwasher with a drawer"
+  },
+  {
+    "uid": "a7b9af190b190bebc8a1bb0c38d7dee6",
+    "synset": "03207941",
+    "category": "dishwasher",
+    "data_path": "dataset/03207941/a7b9af190b190bebc8a1bb0c38d7dee6.npy",
+    "caption": "a grey dishwasher on a white background"
+  },
+  {
+    "uid": "2d0138ffe3eb25b9e23244d89a2e66d6",
+    "synset": "03211117",
+    "category": "display",
+    "data_path": "dataset/03211117/2d0138ffe3eb25b9e23244d89a2e66d6.npy",
+    "caption": "a black and white striped tablet computer"
+  },
+  {
+    "uid": "801812bb859e6c91f9786f6e93041cd8",
+    "synset": "03211117",
+    "category": "display",
+    "data_path": "dataset/03211117/801812bb859e6c91f9786f6e93041cd8.npy",
+    "caption": "a black and blue tv with a geometric pattern"
+  },
+  {
+    "uid": "53433f3e15014d831220240e825d0985",
+    "synset": "03261776",
+    "category": "earphone",
+    "data_path": "dataset/03261776/53433f3e15014d831220240e825d0985.npy",
+    "caption": "a pair of headphones on a white background"
+  },
+  {
+    "uid": "bc404e52bfcd2038538cf6df9faa9b65",
+    "synset": "03261776",
+    "category": "earphone",
+    "data_path": "dataset/03261776/bc404e52bfcd2038538cf6df9faa9b65.npy",
+    "caption": "a pair of headphones with a grey and black design"
+  },
+  {
+    "uid": "69c012fcf92a926414b35a7d7cea7130",
+    "synset": "03325088",
+    "category": "faucet",
+    "data_path": "dataset/03325088/69c012fcf92a926414b35a7d7cea7130.npy",
+    "caption": "a grey faucet with a handle on a white background"
+  },
+  {
+    "uid": "7d44ccb1ef1ddb483321831d2245cf06",
+    "synset": "03325088",
+    "category": "faucet",
+    "data_path": "dataset/03325088/7d44ccb1ef1ddb483321831d2245cf06.npy",
+    "caption": "a grey bottle with a lid on it"
+  },
+  {
+    "uid": "1d5d3b178c89b282492d9da2668ec34c",
+    "synset": "03337140",
+    "category": "file",
+    "data_path": "dataset/03337140/1d5d3b178c89b282492d9da2668ec34c.npy",
+    "caption": "a grey drawer cabinet with three drawers"
+  },
+  {
+    "uid": "75b534f907b9d89491c352d02061b3f7",
+    "synset": "03337140",
+    "category": "file",
+    "data_path": "dataset/03337140/75b534f907b9d89491c352d02061b3f7.npy",
+    "caption": "a 3d model of a shelf with shelves and a drawer"
+  },
+  {
+    "uid": "e7b57f47d2ff2093f0194265a9746c",
+    "synset": "03467517",
+    "category": "guitar",
+    "data_path": "dataset/03467517/e7b57f47d2ff2093f0194265a9746c.npy",
+    "caption": "a guitar with a metal body and a metal neck"
+  },
+  {
+    "uid": "f430d1ecf9ebbf23d57700c05b1862d8",
+    "synset": "03467517",
+    "category": "guitar",
+    "data_path": "dataset/03467517/f430d1ecf9ebbf23d57700c05b1862d8.npy",
+    "caption": "a black electric guitar on a white background"
+  },
+  {
+    "uid": "68106146958b708540b769487f41c4b",
+    "synset": "03513137",
+    "category": "helmet",
+    "data_path": "dataset/03513137/68106146958b708540b769487f41c4b.npy",
+    "caption": "a helmet with a green light on it"
+  },
+  {
+    "uid": "6ff1a99371f10144e5e6ac3ef6bff73",
+    "synset": "03513137",
+    "category": "helmet",
+    "data_path": "dataset/03513137/6ff1a99371f10144e5e6ac3ef6bff73.npy",
+    "caption": "a helmet with a grey color"
+  },
+  {
+    "uid": "712db68c0889d82925e0f641bff885da",
+    "synset": "03593526",
+    "category": "jar",
+    "data_path": "dataset/03593526/712db68c0889d82925e0f641bff885da.npy",
+    "caption": "a 3d model of a vase with pink flowers"
+  },
+  {
+    "uid": "ee490d76aac9cf342f2318fdd66be40a",
+    "synset": "03593526",
+    "category": "jar",
+    "data_path": "dataset/03593526/ee490d76aac9cf342f2318fdd66be40a.npy",
+    "caption": "a blue vase with a wave design on it"
+  },
+  {
+    "uid": "1db70d6edd9d27cd45e6ffe8c3b08de2",
+    "synset": "03624134",
+    "category": "knife",
+    "data_path": "dataset/03624134/1db70d6edd9d27cd45e6ffe8c3b08de2.npy",
+    "caption": "a sword with a long blade on a white background"
+  },
+  {
+    "uid": "820138b6742e713ddaf44b37a13dc4d9",
+    "synset": "03624134",
+    "category": "knife",
+    "data_path": "dataset/03624134/820138b6742e713ddaf44b37a13dc4d9.npy",
+    "caption": "a 3d model of a stone arrowhead"
+  },
+  {
+    "uid": "3591b4c764217d2833e4e0fe8cce118e",
+    "synset": "03636649",
+    "category": "lamp",
+    "data_path": "dataset/03636649/3591b4c764217d2833e4e0fe8cce118e.npy",
+    "caption": "a table lamp with a grey shade on a white background"
+  },
+  {
+    "uid": "6a6fac314f0f295047a478fc5fc970de",
+    "synset": "03636649",
+    "category": "lamp",
+    "data_path": "dataset/03636649/6a6fac314f0f295047a478fc5fc970de.npy",
+    "caption": "a yellow and grey cylinder with a yellow light"
+  },
+  {
+    "uid": "8e38d4d1f849f024296462783ef76d22",
+    "synset": "03642806",
+    "category": "laptop",
+    "data_path": "dataset/03642806/8e38d4d1f849f024296462783ef76d22.npy",
+    "caption": "a white plastic box with a lid on it"
+  },
+  {
+    "uid": "a7f983f1d0642745135a402b573354e4",
+    "synset": "03642806",
+    "category": "laptop",
+    "data_path": "dataset/03642806/a7f983f1d0642745135a402b573354e4.npy",
+    "caption": "a 3d printed object with a mirror on it"
+  },
+  {
+    "uid": "96d6d519784e40c0c066b9622c005c53",
+    "synset": "03691459",
+    "category": "loudspeaker",
+    "data_path": "dataset/03691459/96d6d519784e40c0c066b9622c005c53.npy",
+    "caption": "a pair of white glasses with two small holes"
+  },
+  {
+    "uid": "d027e01fdb3830687ffb47acd56f396b",
+    "synset": "03691459",
+    "category": "loudspeaker",
+    "data_path": "dataset/03691459/d027e01fdb3830687ffb47acd56f396b.npy",
+    "caption": "a speaker tower with four speakers on it"
+  },
+  {
+    "uid": "81f30bae0a1474fff601d2ded3aef05a",
+    "synset": "03710193",
+    "category": "mailbox",
+    "data_path": "dataset/03710193/81f30bae0a1474fff601d2ded3aef05a.npy",
+    "caption": "mail box 3d printed"
+  },
+  {
+    "uid": "a603aea34beaf4424b3c42e318f3affc",
+    "synset": "03710193",
+    "category": "mailbox",
+    "data_path": "dataset/03710193/a603aea34beaf4424b3c42e318f3affc.npy",
+    "caption": "a mailbox on a stand with a black base"
+  },
+  {
+    "uid": "1784a6bea782ef4af50956e9de496e43",
+    "synset": "03759954",
+    "category": "microphone",
+    "data_path": "dataset/03759954/1784a6bea782ef4af50956e9de496e43.npy",
+    "caption": "a microphone stand with a microphone on it"
+  },
+  {
+    "uid": "d9f87094f6a26f8ea2105179d0c9d51e",
+    "synset": "03759954",
+    "category": "microphone",
+    "data_path": "dataset/03759954/d9f87094f6a26f8ea2105179d0c9d51e.npy",
+    "caption": "a grey microphone with a cord attached to it"
+  },
+  {
+    "uid": "19362facbca806df178e7d331e641179",
+    "synset": "03761084",
+    "category": "microwave",
+    "data_path": "dataset/03761084/19362facbca806df178e7d331e641179.npy",
+    "caption": "a silver microwave oven with a drawer"
+  },
+  {
+    "uid": "6aa4b136ec94b46472a38ac2b8f5cd48",
+    "synset": "03761084",
+    "category": "microwave",
+    "data_path": "dataset/03761084/6aa4b136ec94b46472a38ac2b8f5cd48.npy",
+    "caption": "a white microwave oven with a white screen"
+  },
+  {
+    "uid": "6819949f5625ca12d0f568c31c1cd62a",
+    "synset": "03790512",
+    "category": "motorcycle",
+    "data_path": "dataset/03790512/6819949f5625ca12d0f568c31c1cd62a.npy",
+    "caption": "a blue and orange motorcycle is shown in a 3d model"
+  },
+  {
+    "uid": "a3dfeae5bced3533b37378f3c85478b4",
+    "synset": "03790512",
+    "category": "motorcycle",
+    "data_path": "dataset/03790512/a3dfeae5bced3533b37378f3c85478b4.npy",
+    "caption": "a 3d model of a motorcycle"
+  },
+  {
+    "uid": "9426e7aa67c83a4c3b51ab46b2f98f30",
+    "synset": "03797390",
+    "category": "mug",
+    "data_path": "dataset/03797390/9426e7aa67c83a4c3b51ab46b2f98f30.npy",
+    "caption": "a coffee cup with a handle on a white background"
+  },
+  {
+    "uid": "e9499e4a9f632725d6e865157050a80e",
+    "synset": "03797390",
+    "category": "mug",
+    "data_path": "dataset/03797390/e9499e4a9f632725d6e865157050a80e.npy",
+    "caption": "a mug with a handle on a white background"
+  },
+  {
+    "uid": "3fc831f0c69c981048d189f942cedc62",
+    "synset": "03928116",
+    "category": "piano",
+    "data_path": "dataset/03928116/3fc831f0c69c981048d189f942cedc62.npy",
+    "caption": "a piano is shown on a white background"
+  },
+  {
+    "uid": "613cc0f0663a29cf1ef241de847b5ca2",
+    "synset": "03928116",
+    "category": "piano",
+    "data_path": "dataset/03928116/613cc0f0663a29cf1ef241de847b5ca2.npy",
+    "caption": "a piano is shown in a 3d model"
+  },
+  {
+    "uid": "2fe82cff107cbeaeb357233991a61d01",
+    "synset": "03938244",
+    "category": "pillow",
+    "data_path": "dataset/03938244/2fe82cff107cbeaeb357233991a61d01.npy",
+    "caption": "a gray sheet of paper on a white background"
+  },
+  {
+    "uid": "757be11305637a815b68a464a9cbfadf",
+    "synset": "03938244",
+    "category": "pillow",
+    "data_path": "dataset/03938244/757be11305637a815b68a464a9cbfadf.npy",
+    "caption": "a grey pillow on a white background"
+  },
+  {
+    "uid": "6c805c53ada82e954e77d7996e16376",
+    "synset": "03948459",
+    "category": "pistol",
+    "data_path": "dataset/03948459/6c805c53ada82e954e77d7996e16376.npy",
+    "caption": "a gun with a black handle and a black handle"
+  },
+  {
+    "uid": "6f8956455813727c3e93a3c4fff5237",
+    "synset": "03948459",
+    "category": "pistol",
+    "data_path": "dataset/03948459/6f8956455813727c3e93a3c4fff5237.npy",
+    "caption": "a gun with a yellow handle on a white background"
+  },
+  {
+    "uid": "4eedf4a65907a4c7a2c59a4d90e63212",
+    "synset": "03991062",
+    "category": "pot",
+    "data_path": "dataset/03991062/4eedf4a65907a4c7a2c59a4d90e63212.npy",
+    "caption": "a gray plastic box with a lid"
+  },
+  {
+    "uid": "ed86685bc4a0711044c183864792bc2b",
+    "synset": "03991062",
+    "category": "pot",
+    "data_path": "dataset/03991062/ed86685bc4a0711044c183864792bc2b.npy",
+    "caption": "a hat is shown in 3d"
+  },
+  {
+    "uid": "132325926d85caa6d0c63a304a95442d",
+    "synset": "04004475",
+    "category": "printer",
+    "data_path": "dataset/04004475/132325926d85caa6d0c63a304a95442d.npy",
+    "caption": "a white printer with green paper on it"
+  },
+  {
+    "uid": "da1ab3860b75dbe837f7fabf76ffe0b0",
+    "synset": "04004475",
+    "category": "printer",
+    "data_path": "dataset/04004475/da1ab3860b75dbe837f7fabf76ffe0b0.npy",
+    "caption": "epson xerox epson xerox ep"
+  },
+  {
+    "uid": "57759e351ec76d86d3c1501c166e6b2a",
+    "synset": "04074963",
+    "category": "remote control",
+    "data_path": "dataset/04074963/57759e351ec76d86d3c1501c166e6b2a.npy",
+    "caption": "a black plastic sleeve for a phone"
+  },
+  {
+    "uid": "9d5f59e259057baa910a53622567655f",
+    "synset": "04074963",
+    "category": "remote control",
+    "data_path": "dataset/04074963/9d5f59e259057baa910a53622567655f.npy",
+    "caption": "a white and green pole with a green stripe"
+  },
+  {
+    "uid": "9301403c048cc8a3fbd94d73a34fbe80",
+    "synset": "04090263",
+    "category": "rifle",
+    "data_path": "dataset/04090263/9301403c048cc8a3fbd94d73a34fbe80.npy",
+    "caption": "a 3d model of a rifle with a scope"
+  },
+  {
+    "uid": "da6ec2d5f4d750303d7c323cf1653143",
+    "synset": "04090263",
+    "category": "rifle",
+    "data_path": "dataset/04090263/da6ec2d5f4d750303d7c323cf1653143.npy",
+    "caption": "a black rifle on a white background"
+  },
+  {
+    "uid": "60e62b419220c21e1a18bc096aeb4c21",
+    "synset": "04099429",
+    "category": "rocket",
+    "data_path": "dataset/04099429/60e62b419220c21e1a18bc096aeb4c21.npy",
+    "caption": "a 3d model of a slingshot"
+  },
+  {
+    "uid": "a410b9d1557f0bcad6a1861443498ca3",
+    "synset": "04099429",
+    "category": "rocket",
+    "data_path": "dataset/04099429/a410b9d1557f0bcad6a1861443498ca3.npy",
+    "caption": "a small knife on a white background"
+  },
+  {
+    "uid": "48f26ddc704fec2f379c6a1d59ef7283",
+    "synset": "04225987",
+    "category": "skateboard",
+    "data_path": "dataset/04225987/48f26ddc704fec2f379c6a1d59ef7283.npy",
+    "caption": "a skateboard with wheels and a blue color"
+  },
+  {
+    "uid": "8ae2871e13786052f42b80606c2f3752",
+    "synset": "04225987",
+    "category": "skateboard",
+    "data_path": "dataset/04225987/8ae2871e13786052f42b80606c2f3752.npy",
+    "caption": "a black skateboard on a white background"
+  },
+  {
+    "uid": "6aac93deb58a35f56a3237a661a9fa9",
+    "synset": "04256520",
+    "category": "sofa",
+    "data_path": "dataset/04256520/6aac93deb58a35f56a3237a661a9fa9.npy",
+    "caption": "a 3d model of a sofa with pillows"
+  },
+  {
+    "uid": "a0baf84e4bde88691912372ddaeb001",
+    "synset": "04256520",
+    "category": "sofa",
+    "data_path": "dataset/04256520/a0baf84e4bde88691912372ddaeb001.npy",
+    "caption": "a gray cube shaped box on a white background"
+  },
+  {
+    "uid": "4a82d3e205075abdc5f3208c32f3ec87",
+    "synset": "04330267",
+    "category": "stove",
+    "data_path": "dataset/04330267/4a82d3e205075abdc5f3208c32f3ec87.npy",
+    "caption": "a 3d model of a small black oven"
+  },
+  {
+    "uid": "d98da0d1b24f509d6134c153bee8ea0",
+    "synset": "04330267",
+    "category": "stove",
+    "data_path": "dataset/04330267/d98da0d1b24f509d6134c153bee8ea0.npy",
+    "caption": "a white plastic plate with four burners on it"
+  },
+  {
+    "uid": "c842f85477f9bac0a7a7a90dc2dc5bd",
+    "synset": "04379243",
+    "category": "table",
+    "data_path": "dataset/04379243/c842f85477f9bac0a7a7a90dc2dc5bd.npy",
+    "caption": "a round table with a grey marble top and a metal base"
+  },
+  {
+    "uid": "e05344d8bd3ef63c5b7bf37141f96eae",
+    "synset": "04379243",
+    "category": "table",
+    "data_path": "dataset/04379243/e05344d8bd3ef63c5b7bf37141f96eae.npy",
+    "caption": "a 3d image of a table with a long top"
+  },
+  {
+    "uid": "16685299c37055c2be40226527c9872",
+    "synset": "04401088",
+    "category": "telephone",
+    "data_path": "dataset/04401088/16685299c37055c2be40226527c9872.npy",
+    "caption": "a tablet computer is shown on a white background"
+  },
+  {
+    "uid": "4bef48f1c1b4a40fbdeec9c43546255e",
+    "synset": "02992529",
+    "category": "telephone",
+    "data_path": "dataset/02992529/4bef48f1c1b4a40fbdeec9c43546255e.npy",
+    "caption": "a white cell phone with a screen showing a website"
+  },
+  {
+    "uid": "6609f05bbe9c49172cf708d3028fb325",
+    "synset": "04401088",
+    "category": "telephone",
+    "data_path": "dataset/04401088/6609f05bbe9c49172cf708d3028fb325.npy",
+    "caption": "music videos pictures - 3d model"
+  },
+  {
+    "uid": "8a26be623e40850a203d19a168d29f04",
+    "synset": "02992529",
+    "category": "telephone",
+    "data_path": "dataset/02992529/8a26be623e40850a203d19a168d29f04.npy",
+    "caption": "a white iphone is shown on a white background"
+  },
+  {
+    "uid": "800f8586461b18c238cd8eb23853c009",
+    "synset": "04460130",
+    "category": "tower",
+    "data_path": "dataset/04460130/800f8586461b18c238cd8eb23853c009.npy",
+    "caption": "a 3d model of a church steeple"
+  },
+  {
+    "uid": "e5819354e7ddc4a2545370dbbc80d144",
+    "synset": "04460130",
+    "category": "tower",
+    "data_path": "dataset/04460130/e5819354e7ddc4a2545370dbbc80d144.npy",
+    "caption": "a grey round object on a white background"
+  },
+  {
+    "uid": "7670f8aed98c8a653015b0b4292af7d",
+    "synset": "04468005",
+    "category": "train",
+    "data_path": "dataset/04468005/7670f8aed98c8a653015b0b4292af7d.npy",
+    "caption": "a small train engine with a yellow and green body"
+  },
+  {
+    "uid": "ab084adb3157a8d44b0b2e6e63122009",
+    "synset": "04468005",
+    "category": "train",
+    "data_path": "dataset/04468005/ab084adb3157a8d44b0b2e6e63122009.npy",
+    "caption": "a 3d model of a train on a white background"
+  },
+  {
+    "uid": "3a4c31888d291859f8e1db0ba8b72d09",
+    "synset": "04530566",
+    "category": "vessel",
+    "data_path": "dataset/04530566/3a4c31888d291859f8e1db0ba8b72d09.npy",
+    "caption": "a model of a navy ship on a white background"
+  },
+  {
+    "uid": "5e8276dfb4c1db936f31e247620349e3",
+    "synset": "04530566",
+    "category": "vessel",
+    "data_path": "dataset/04530566/5e8276dfb4c1db936f31e247620349e3.npy",
+    "caption": "a 3d rendering of a ship with a red hull"
+  },
+  {
+    "uid": "5517868119f44388a027ae047c88a1b9",
+    "synset": "04554684",
+    "category": "washer",
+    "data_path": "dataset/04554684/5517868119f44388a027ae047c88a1b9.npy",
+    "caption": "a white 3d model of a washing machine"
+  },
+  {
+    "uid": "71f26627a3eece3e151c656115fe24ee",
+    "synset": "04554684",
+    "category": "washer",
+    "data_path": "dataset/04554684/71f26627a3eece3e151c656115fe24ee.npy",
+    "caption": "a white washer on a white background"
+  }
+]
