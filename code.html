@@ -115,13 +115,12 @@
         <div class="container">
             <h2 class="section-title">Running it</h2>
             <p>
-                Clone the repository and open the notebook. PyTorch is assumed to be installed; the first code cell of
-                the notebook installs the remaining dependencies.
+                Clone the repository and open the notebook. PyTorch is assumed to be installed; the command below installs the remaining dependencies.
             </p>
             <div class="citation-block">
 <pre class="citation-code"><code>git clone https://github.com/usmarcv/Tutorial-3DVLMs.git
 cd Tutorial-3DVLMs
-pip install einops plotly ipywidgets scikit-learn matplotlib nbformat
+pip install torch_redstone einops plotly ipywidgets scikit-learn matplotlib nbformat
 jupyter lab handson_3DVLM_contrastive.ipynb</code></pre>
             </div>
             <p style="margin-top: 1.5rem;">
@@ -129,7 +128,8 @@ jupyter lab handson_3DVLM_contrastive.ipynb</code></pre>
             </p>
             <div class="citation-block">
 <pre class="citation-code"><code>!git clone https://github.com/usmarcv/Tutorial-3DVLMs.git
-%cd Tutorial-3DVLMs</code></pre>
+%cd Tutorial-3DVLMs
+!pip install -q torch_redstone</code></pre>
             </div>
         </div>
     </section>
