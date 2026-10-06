@@ -1,15 +1,16 @@
 """Lightweight ShapeNet subset loading for the 3D-VLM contrastive-learning tutorial.
 
-This module is fully self-contained within `tutorial/handson_cl/`: it does not
-import `data.py` (the repo's full dataset module imports MinkowskiEngine at the
-top level, a heavy CUDA-oriented dependency we don't need here) nor the repo's
-top-level `utils` package - `normalize_pc` is vendored locally in `pc_utils.py`.
+This module is self-contained: it does not import the original 3DMRL research
+code (whose dataset module imports MinkowskiEngine at the top level, a heavy
+CUDA-oriented dependency we don't need here) - `normalize_pc` is vendored
+locally in `pc_utils.py`.
 
 The one-time `build_manifest()` step is the only thing that reaches outside this
-folder: it reads the full ~52k-object ShapeNet split from `data/meta_data/...`
-and copies the ~110 selected objects' raw `.npy` files into `dataset/` right here.
-After that, every other function in this module (and the notebook) only ever
-touches files inside `tutorial/handson_cl/`.
+repository: run from inside the 3DMRL code base, it reads the full ~52k-object
+ShapeNet split from `data/meta_data/...` and copies the ~110 selected objects'
+raw `.npy` files into `dataset/`. Its result (`subset_manifest.json` and
+`dataset/`) is shipped here, so every other function in this module (and the
+notebook) only ever touches files inside this repository.
 """
 import json
 import os
@@ -39,8 +40,8 @@ def _resolve_source_path(raw_path: str) -> str:
 
 def build_manifest(out_path: str, split_path: str = SPLIT_PATH, n_per_synset: int = 2, seed: int = 0):
     """Select ~100 ShapeNet objects (n_per_synset per synset), copy their raw
-    `.npy` files into `tutorial/handson_cl/dataset/<synset>/<uid>.npy` so this
-    folder is self-contained (no dependency on the full training data mount),
+    `.npy` files into `dataset/<synset>/<uid>.npy` so this
+    repository is self-contained (no dependency on the full training data mount),
     and cache their lightweight metadata to `out_path`.
     """
     with open(split_path, "r") as f:
@@ -83,8 +84,8 @@ def build_manifest(out_path: str, split_path: str = SPLIT_PATH, n_per_synset: in
                 "uid": entry["id"],
                 "synset": synset,
                 "category": category,
-                # relative to tutorial/handson_cl/ (this folder), NOT the repo root -
-                # keeps the manifest usable even if this folder is copied elsewhere.
+                # relative to the folder that holds `handson_utils/` - keeps the
+                # manifest usable even if that folder is copied elsewhere.
                 "data_path": os.path.relpath(dest_path, HANDSON_DIR),
                 "caption": caption,
             })
@@ -97,8 +98,20 @@ def build_manifest(out_path: str, split_path: str = SPLIT_PATH, n_per_synset: in
 
 
 def load_manifest(path: str, **build_kwargs):
-    """Load the cached manifest, building it first if it doesn't exist yet."""
+    """Load the cached manifest, building it first if it doesn't exist yet.
+
+    Rebuilding needs the original 3DMRL ShapeNet split and raw data, which are
+    not shipped with this repository - here the manifest is always the cached
+    `subset_manifest.json`.
+    """
     if not os.path.isfile(path):
+        split_path = build_kwargs.get("split_path", SPLIT_PATH)
+        if not os.path.isfile(split_path):
+            raise FileNotFoundError(
+                f"{path} not found and it cannot be rebuilt here: the source split "
+                f"{split_path} is not part of this repository. Restore the manifest "
+                f"with `git checkout -- subset_manifest.json`."
+            )
         return build_manifest(path, **build_kwargs)
     with open(path, "r") as f:
         return json.load(f)

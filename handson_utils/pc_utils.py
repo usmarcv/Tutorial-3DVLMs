@@ -1,6 +1,5 @@
-"""Point-cloud preprocessing helper, vendored from `utils/data.py` (repo root) so
-that this tutorial folder is fully self-contained and doesn't need to reach
-outside `tutorial/handson_cl/` to import anything at load time.
+"""Point-cloud preprocessing helper, vendored from the original 3DMRL research
+code (`utils/data.py`) so that this repository is fully self-contained.
 """
 import numpy as np
 

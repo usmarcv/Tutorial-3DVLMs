@@ -1,85 +1,104 @@
 # Hands-on: Contrastive Learning for 3D Vision-Language Models
 
-A hands-on tutorial notebook implementing, end to end, a 3D Vision-Language
-contrastive-learning pipeline: point cloud -> 3D encoder -> normalize -> joint
-embedding space with frozen OpenCLIP image/text embeddings -> similarity
-matrix -> symmetric InfoNCE loss -> a training loop that updates only the 3D
-encoder.
+Hands-on material for the tutorial **An overview of 3D Vision-Language Models**
+(SIBGRAPI 2026).
+
+[Project page](https://usmarcv.github.io/Tutorial-3DVLMs/) |
+[Paper (arXiv)](https://arxiv.org/abs/2609.05583) |
+[Slides](https://usmarcv.github.io/Tutorial-3DVLMs/code.html)
+
+The notebook implements, end to end, a 3D Vision-Language contrastive-learning
+pipeline: point cloud -> 3D encoder -> normalize -> joint embedding space with
+frozen OpenCLIP image/text embeddings -> similarity matrix -> symmetric InfoNCE
+loss -> a training loop that updates only the 3D encoder.
 
 ## Contents
 
-- `3D_VLM_Contrastive_Learning.ipynb` - the tutorial notebook, 14 sections. Its
-  first code cell (`!pip install ...`) installs every non-stdlib, non-`torch`
-  dependency, so a fresh environment just needs `torch` already present.
-- `handson_utils/` - small helper package used by the notebook. Every file here
-  is fully self-contained inside this folder - nothing imports the outer
-  `3DMRL` repo (the `data/`, `models/`, or `utils/` packages) at runtime:
-  - `data_loading.py` - selects/caches the 110-object ShapeNet subset and loads
-    point clouds + precomputed OpenCLIP embeddings per object. All paths it reads
-    at runtime (`subset_manifest.json`, `dataset/...`) are relative to this
-    folder, not the repo root. (Its one-time `build_manifest()` bootstrap step is
-    the single exception - see below.)
-  - `pc_utils.py` - `normalize_pc`, vendored from the repo's `utils/data.py`.
+- `handson_3DVLM_contrastive.ipynb` - the tutorial notebook, 11 sections:
+  setup, exploring ShapeNet, interactive point-cloud visualization, the three
+  modalities, feature extraction, normalization, the joint embedding space, the
+  similarity matrix, the contrastive loss, the training loop, and a
+  before/after comparison.
+- `handson_utils/` - small helper package used by the notebook. It is
+  self-contained: nothing imports code from outside this repository.
+  - `data_loading.py` - loads the cached 110-object ShapeNet subset: point
+    clouds plus precomputed OpenCLIP embeddings per object.
+  - `pc_utils.py` - `normalize_pc`.
   - `point_bert.py` / `pointnet_util.py` - the Point-BERT 3D encoder
-    (arXiv:2111.14819) and its PointNet++ patchify layer, vendored from
-    `models/ppat.py` / `models/pointnet_util.py`. Needs `torch_redstone`,
-    `einops`. Pure PyTorch otherwise - farthest-point sampling is a plain
-    PyTorch loop rather than a `dgl` call, to avoid that package's large,
-    version-fragile dependency chain.
-  - `logit_scale.py` - `LogitScaleNetwork`, vendored from
-    `models/LogitScaleNetwork.py`.
-  - `model_setup.py` - thin `build_pointbert()`/`build_logit_scale()` wrappers
-    around the above (`scaling=1`, the smallest of six size presets - ~5M
-    params, fast enough to train live on CPU).
+    (arXiv:2111.14819) and its PointNet++ patchify layer. Needs
+    `torch_redstone` and `einops`; pure PyTorch otherwise (farthest-point
+    sampling is a plain PyTorch loop, not a `dgl` call).
+  - `logit_scale.py` - `LogitScaleNetwork`, the learnable CLIP-style
+    temperature.
+  - `model_setup.py` - thin `build_pointbert()` / `build_logit_scale()`
+    wrappers (`scaling=1`, the smallest of six size presets: about 5M
+    parameters, fast enough to train live on CPU).
   - `viz.py` - Plotly/matplotlib helpers for point clouds, joint-embedding PCA
-    scatter plots, similarity-matrix heatmaps, and per-category zero-shot
-    classification heatmaps.
-- `subset_manifest.json` - cached metadata (uid, synset, category, path, caption)
-  for the 110 selected ShapeNet objects, 2 per category (4 for one) across 54 categories,
-  drawn from `data/meta_data/split/ablation/train_shapenet_only.json`.
-- `dataset/<synset>/<uid>.npy` - the actual raw data for those 110 objects
-  (point cloud + precomputed OpenCLIP embeddings + captions), copied here so this
-  folder is fully self-contained (~33MB total) and doesn't depend on the full
-  `data/objaverse-processed/...` mount being present. Delete `subset_manifest.json`
-  (and, if you want a truly fresh copy, `dataset/`) to rebuild from scratch - the
-  selection is still seeded (seed=0 by default), so re-running reproduces the same
-  110 objects.
+    scatter plots, and similarity-matrix heatmaps.
+- `subset_manifest.json` - metadata (uid, synset, category, path, caption) for
+  the 110 selected ShapeNet objects: 2 per category (4 for one) across 54
+  categories.
+- `dataset/<synset>/<uid>.npy` - the data for those 110 objects (point cloud,
+  precomputed OpenCLIP embeddings, captions), about 34 MB in total.
+
+The subset was selected once (seed 0) from the ShapeNet training split used by
+the original 3DMRL research code, which is not part of this repository. The
+manifest and data are shipped as-is and cannot be rebuilt from here, so do not
+delete `subset_manifest.json` or `dataset/`.
 
 ## Running it
 
-This folder is self-contained and portable - it can be copied to a different
-machine on its own (no need for the rest of the `3DMRL` repo) as long as a
-Jupyter frontend and `torch` are available there:
+You need Python with PyTorch already installed (see
+[pytorch.org/get-started](https://pytorch.org/get-started/locally/)).
 
 ```bash
-cd tutorial/handson_cl
-jupyter lab 3D_VLM_Contrastive_Learning.ipynb   # or: jupyter notebook ...
+git clone https://github.com/usmarcv/Tutorial-3DVLMs.git
+cd Tutorial-3DVLMs
+pip install torch_redstone einops plotly ipywidgets scikit-learn matplotlib nbformat
+jupyter lab handson_3DVLM_contrastive.ipynb   # or: jupyter notebook ...
 ```
 
-Run the notebook's first code cell once per environment to install everything
-else it needs (`torch_redstone`, `einops`, `plotly`, `ipywidgets`,
-`scikit-learn`, `matplotlib`) - no OpenCLIP and no MinkowskiEngine required, no
-GPU required either. Everything runs on CPU in well under a minute (the
-Section 10 training loop is ~60 optimizer steps over 110 objects, ~15s
-measured on this machine).
+The notebook's first code cell runs the same `pip install`, so it is enough to
+open the notebook and run all cells.
+
+On Google Colab, the notebook needs the repository files next to it. Run this
+in a cell before the notebook's own setup cell:
+
+```
+!git clone https://github.com/usmarcv/Tutorial-3DVLMs.git
+%cd Tutorial-3DVLMs
+```
+
+No OpenCLIP, no MinkowskiEngine and no GPU are required. The whole notebook
+runs on CPU; the training loop in Section 10 is 60 optimizer steps over the
+110 objects and takes roughly half a minute on a multi-core CPU.
 
 ## What's simplified, on purpose
 
-- No live OpenCLIP calls: image/text embeddings are read from each object's
-  precomputed `image_feat`/`blip_caption_feat` fields - exactly how the real
-  production trainer (`trainers/trainer_3dmrl.py`) uses them too.
-- No raw rendered photos exist for these objects in this environment, so the
-  "Image" modality is shown as a labeled point-cloud pseudo-render proxy; the
-  actual `z_img` used in every computation is still the real precomputed CLIP
-  embedding, never the proxy image.
-- A single flat 1280-dim embedding, to keep the story simple, rather than the
-  production Matryoshka/MRL nested-dimension setup (`trainers/MRL.py`).
-- Section 12's zero-shot classification uses category "prototypes" built by
-  averaging each category's real, precomputed caption embeddings, rather than
-  encoding hand-written prompts (e.g. `"a point cloud of a chair"`) with a live
-  text encoder - consistent with the "no live OpenCLIP calls" simplification above.
+- No live OpenCLIP calls: image and text embeddings are read from each
+  object's precomputed `image_feat` / `blip_caption_feat` fields, the same way
+  the full-scale trainer uses them.
+- No rendered photos are shipped for these objects, so the "Image" modality is
+  shown as a labeled point-cloud pseudo-render proxy. The `z_img` used in every
+  computation is still the real precomputed CLIP embedding, never the proxy
+  image.
+- A single flat 1280-dim embedding, to keep the story simple, rather than a
+  Matryoshka (nested-dimension) setup.
+- No hard-negative mining, no learning-rate schedule, no data augmentation and
+  no multi-GPU training. The before/after comparison is measured on objects
+  that were also trained on, so it shows that the loss fits the alignment, not
+  that the encoder generalizes.
 
-No hard-negative mining, no learning-rate schedule, no data augmentation, and no
-multi-GPU/distributed training either - see the real production trainer
-(`trainers/trainer_3dmrl.py`) for what large-scale training adds on top of this toy
-demo.
+## Citation
+
+```bibtex
+@misc{lobo2026overview3dvisionlanguagemodels,
+    title={An overview of 3D Vision-Language Models},
+    author={Márcus Lobo and Vitor Matias and Afonso Paiva and Jeová Farias and Tiago Novello and Moacir Ponti},
+    year={2026},
+    eprint={2609.05583},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2609.05583},
+}
+```
