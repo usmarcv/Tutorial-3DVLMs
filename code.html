@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides &amp; Code | Tutorial: An overview of 3D Vision-Language Models</title>
+    <meta name="description" content="Slides &amp; Code - Tutorial: An overview of 3D Vision-Language Models">
+
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QZJM46VQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q1QZJM46VQ');
+    </script>
+
+    <!-- Navigation -->
+    <nav class="sidebar" aria-label="Main">
+        <a href="index.html" class="sidebar-item">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">Home</span>
+        </a>
+        <a href="schedule.html" class="sidebar-item">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">Schedule</span>
+        </a>
+        <a href="code.html" class="sidebar-item active" aria-current="page">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">Slides &amp; Code</span>
+        </a>
+        <a href="people.html" class="sidebar-item">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">People</span>
+        </a>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section page-header">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="gradient-text">Slides &amp; Code</span>
+            </h1>
+            <p class="hero-status"><a href="index.html">Tutorial: An overview of 3D Vision-Language Models</a></p>
+        </div>
+    </section>
+
+    <!-- Slides -->
+    <section id="slides" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Slides</h2>
+            <div class="hero-buttons">
+                <a href="assets/slides/3dvlm-tutorial-part1.pdf" class="btn" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-file-pdf"></i> Slides &mdash; Part 1 (PDF)
+                </a>
+                <a href="assets/slides/3dvlm-tutorial-part2.pdf" class="btn" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-file-pdf"></i> Slides &mdash; Part 2 (PDF)
+                </a>
+                <a href="https://arxiv.org/pdf/2609.05583" class="btn btn-outline" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-file-pdf"></i> Paper (arXiv)
+                </a>
+            </div>
+            <ul class="content-list">
+                <li><b>Part 1 &mdash; Foundations and contrastive alignment:</b> motivation, 3D representations and datasets, 3D VLMs vs. 3D VLLMs, the Point-BERT encoder, the geometric view of contrastive alignment, and the symmetric InfoNCE loss.</li>
+                <li><b>Part 2 &mdash; Model families, tasks and applications:</b> the five-family taxonomy in depth (closed-set, projection-based, native joint embeddings, language-aligned 3D Gaussian splatting, 3D VLLMs), downstream tasks, and embodied AI.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Code -->
+    <section id="code" class="section">
+        <div class="container">
+            <h2 class="section-title">Code</h2>
+            <p>
+                The hands-on notebook implements a 3D Vision-Language contrastive-learning pipeline end to end:
+                point cloud &rarr; 3D encoder (Point-BERT) &rarr; normalization &rarr; joint embedding space with frozen
+                OpenCLIP image and text embeddings &rarr; similarity matrix &rarr; symmetric InfoNCE loss &rarr; a training
+                loop that updates only the 3D encoder.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://github.com/usmarcv/Tutorial-3DVLMs" class="btn" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i> Repository
+                </a>
+                <a href="https://github.com/usmarcv/Tutorial-3DVLMs/blob/main/handson_3DVLM_contrastive.ipynb" class="btn btn-outline" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-book"></i> Notebook
+                </a>
+                <a href="https://colab.research.google.com/github/usmarcv/Tutorial-3DVLMs/blob/main/handson_3DVLM_contrastive.ipynb" class="btn btn-outline" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-play"></i> Open in Colab
+                </a>
+            </div>
+            <ul class="content-list">
+                <li><b>Data:</b> a self-contained subset of 110 ShapeNet objects across 54 categories, with precomputed OpenCLIP image and text embeddings, shipped in the repository.</li>
+                <li><b>Hardware:</b> everything runs on CPU; no GPU is required.</li>
+                <li><b>Helpers:</b> the <code>handson_utils/</code> package provides data loading, the Point-BERT encoder, and visualization utilities.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Running it -->
+    <section id="running" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Running it</h2>
+            <p>
+                Clone the repository and open the notebook. PyTorch is assumed to be installed; the first code cell of
+                the notebook installs the remaining dependencies.
+            </p>
+            <div class="citation-block">
+<pre class="citation-code"><code>git clone https://github.com/usmarcv/Tutorial-3DVLMs.git
+cd Tutorial-3DVLMs
+pip install einops plotly ipywidgets scikit-learn matplotlib nbformat
+jupyter lab handson_3DVLM_contrastive.ipynb</code></pre>
+            </div>
+            <p style="margin-top: 1.5rem;">
+                On Google Colab, the notebook needs the repository files next to it. Run this in a cell before the notebook's own setup cell:
+            </p>
+            <div class="citation-block">
+<pre class="citation-code"><code>!git clone https://github.com/usmarcv/Tutorial-3DVLMs.git
+%cd Tutorial-3DVLMs</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="hero-authors" >
+            <p>Website design inspired by <a href="https://cvlab-kaist.github.io/DA-Flow/"> DA-Flow</a> and <a href="https://cvlab-kaist.github.io/AgentRVOS/">AgentRVOS</a>. We thank the authors for open-sourcing their project page templates.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

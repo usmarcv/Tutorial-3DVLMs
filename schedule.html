@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | Tutorial: An overview of 3D Vision-Language Models</title>
+    <meta name="description" content="Schedule - Tutorial: An overview of 3D Vision-Language Models">
+
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1QZJM46VQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q1QZJM46VQ');
+    </script>
+
+    <!-- Navigation -->
+    <nav class="sidebar" aria-label="Main">
+        <a href="index.html" class="sidebar-item">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">Home</span>
+        </a>
+        <a href="schedule.html" class="sidebar-item active" aria-current="page">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">Schedule</span>
+        </a>
+        <a href="code.html" class="sidebar-item">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">Slides &amp; Code</span>
+        </a>
+        <a href="people.html" class="sidebar-item">
+            <span class="sidebar-dot"></span>
+            <span class="sidebar-label">People</span>
+        </a>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section page-header">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="gradient-text">Schedule</span>
+            </h1>
+            <p class="hero-status"><a href="index.html">Tutorial: An overview of 3D Vision-Language Models</a></p>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Program</h2>
+            <p>
+                The tutorial was presented at <a class="content-link" href="https://sibgrapi.sbc.org.br/2026/" target="_blank" rel="noopener noreferrer">SIBGRAPI 2026</a>
+                by <a class="content-link" href="people.html">M&aacute;rcus Lobo and Vitor Matias</a>, in two lecture parts and a hands-on session.
+            </p>
+            <ul class="content-list">
+                <li><b>Date and time:</b> Tuesday, September 29, 2026, 14:00&ndash;17:30</li>
+                <li><b>Room:</b> D</li>
+                <li><b>Location:</b> Federal University of Goi&aacute;s (UFG), Goi&acirc;nia, GO, Brazil</li>
+                <li><b>Official listing:</b> tutorial #266 in the <a class="content-link" href="https://sibgrapi.sbc.org.br/2026/#/program/tutorials" target="_blank" rel="noopener noreferrer">SIBGRAPI 2026 tutorials program</a></li>
+            </ul>
+            <div class="table-container">
+                <table class="results-table schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="schedule-group">
+                            <td colspan="2">Part 1 &mdash; Foundations and contrastive alignment &nbsp;<a class="content-link" href="assets/slides/3dvlm-tutorial-part1.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Slides</a></td>
+                        </tr>
+                        <tr>
+                            <td>Goals and motivation</td>
+                            <td>Why 3D and language: applications in robotics, LiDAR, medical imaging and engineering; the move beyond closed-set 3D recognition; industry and research impact.</td>
+                        </tr>
+                        <tr>
+                            <td>3D representations and datasets</td>
+                            <td>Point clouds, meshes, multi-view images and 3D Gaussian splatting; where the language comes from; ShapeNet, Objaverse / Objaverse-XL and Objaverse-LVIS.</td>
+                        </tr>
+                        <tr>
+                            <td>3D VLMs vs. 3D VLLMs</td>
+                            <td>The alignment paradigm (similarity scores and rankings) against the generative paradigm (encoder, projector and LLM producing text); overview of the 3D VLM training pipeline.</td>
+                        </tr>
+                        <tr>
+                            <td>Input and encoders</td>
+                            <td>(3D, image, text) triplets; image, text and 3D encoders with projection layers; 3D encoder options and a closer look at Point-BERT and masked point modeling.</td>
+                        </tr>
+                        <tr>
+                            <td>Geometric view of contrastive alignment</td>
+                            <td>Frozen OpenCLIP image and text embeddings as the semantic reference space; L2-normalization, the unit hypersphere and cosine similarity before and after alignment.</td>
+                        </tr>
+                        <tr>
+                            <td>Contrastive alignment for 3D VLMs</td>
+                            <td>Alignment as batch matching, the similarity matrix, the symmetric InfoNCE loss and its PyTorch implementation; key ingredients: data scale, augmentation, batch size, hard negatives, temperature and compute.</td>
+                        </tr>
+                        <tr>
+                            <td>A taxonomy of 3D VLMs</td>
+                            <td>Five families, from fixed labels to open vocabulary to language generation.</td>
+                        </tr>
+                        <tr class="schedule-group">
+                            <td colspan="2">Part 2 &mdash; Model families, tasks and applications &nbsp;<a class="content-link" href="assets/slides/3dvlm-tutorial-part2.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Slides</a></td>
+                        </tr>
+                        <tr>
+                            <td>Recap</td>
+                            <td>Problem statement, contrastive alignment, and 3D VLMs vs. 3D VLLMs.</td>
+                        </tr>
+                        <tr>
+                            <td>Closed-set recognition and projection-based adaptation</td>
+                            <td>Fixed classifiers (MVCNN, PointNet, DGCNN, Point-BERT) and their limits; rendering 3D into 2D views for frozen CLIP, with PointCLIP V2.</td>
+                        </tr>
+                        <tr>
+                            <td>Native joint embeddings</td>
+                            <td>Training a dedicated 3D encoder into a shared space with image and text: OpenShape, Uni3D and 3D-MRL.</td>
+                        </tr>
+                        <tr>
+                            <td>Language-aligned 3D Gaussian splatting</td>
+                            <td>Gaussians as the 3D modality: UniGS and related methods.</td>
+                        </tr>
+                        <tr>
+                            <td>3D Vision-Large Language Models</td>
+                            <td>The encoder &rarr; projector &rarr; LLM recipe and two-stage training: PointLLM, ShapeLLM, PointAlign and N3D-VLM.</td>
+                        </tr>
+                        <tr>
+                            <td>From model families to tasks</td>
+                            <td>Zero-shot classification, cross-modal retrieval and spatial reasoning.</td>
+                        </tr>
+                        <tr>
+                            <td>Embodied AI</td>
+                            <td>Vision-language-action models and the role of 3D data: PointVLA and GR00T N1.</td>
+                        </tr>
+                        <tr class="schedule-group">
+                            <td colspan="2">Hands-on and discussion</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Hands-on</td>
+                            <td>Contrastive learning for 3D VLMs, end to end, in a <a class="content-link" href="code.html">notebook</a>: point cloud &rarr; 3D encoder &rarr; joint embedding space &rarr; similarity matrix &rarr; InfoNCE loss &rarr; training loop.</td>
+                        </tr>
+                        <tr>
+                            <td>Q&amp;A</td>
+                            <td>Questions and discussion.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="hero-authors" >
+            <p>Website design inspired by <a href="https://cvlab-kaist.github.io/DA-Flow/"> DA-Flow</a> and <a href="https://cvlab-kaist.github.io/AgentRVOS/">AgentRVOS</a>. We thank the authors for open-sourcing their project page templates.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
